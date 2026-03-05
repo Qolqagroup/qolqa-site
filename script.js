@@ -1,28 +1,40 @@
 (() => {
-  // Year
+  // Footer year
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Mobile nav
-  const toggle = document.querySelector(".nav-toggle");
+  // Mobile menu
+  const btn = document.querySelector(".navToggle");
   const nav = document.querySelector(".nav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("show");
-      toggle.setAttribute("aria-expanded", String(isOpen));
+  if (btn && nav) {
+    btn.addEventListener("click", () => {
+      const open = nav.classList.toggle("isOpen");
+      btn.setAttribute("aria-expanded", String(open));
     });
 
     nav.querySelectorAll("a").forEach(a => {
       a.addEventListener("click", () => {
-        nav.classList.remove("show");
-        toggle.setAttribute("aria-expanded", "false");
+        nav.classList.remove("isOpen");
+        btn.setAttribute("aria-expanded", "false");
       });
     });
   }
 
-  // Subtle parallax drift for the glow (luxury, almost imperceptible)
-  const glow = document.querySelector(".bg-glow");
-  if (!glow) return;
+  // Reveal on scroll (subtle, luxury)
+  const targets = document.querySelectorAll(".section, .hero__left, .hero__right");
+  targets.forEach(el => el.classList.add("reveal"));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("isVisible");
+    });
+  }, { threshold: 0.12 });
+
+  targets.forEach(el => io.observe(el));
+
+  // Slow ambient drift (almost imperceptible)
+  const halo = document.querySelector(".ambient__halo");
+  if (!halo) return;
 
   let tx = 0, ty = 0;
   window.addEventListener("pointermove", (e) => {
@@ -33,7 +45,7 @@
   }, { passive: true });
 
   const tick = () => {
-    glow.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+    halo.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
     requestAnimationFrame(tick);
   };
   tick();
