@@ -4,10 +4,9 @@
   --muted:rgba(255,255,255,0.62);
   --line:rgba(255,255,255,0.08);
   --gold:#D6B26E;
-
   --max:1100px;
 
-  /* NASA Blue Marble texture (remote). You can replace with a local file later. */
+  /* NASA Blue Marble texture (remote). Replace later with a local asset if you prefer. */
   --satellite-url: url("https://assets.science.nasa.gov/content/dam/science/esd/climate/2023/12/ImageWall5_1920x1200-80.jpg");
 }
 
@@ -31,7 +30,7 @@ a:hover{ opacity:0.92; }
   padding:0 24px;
 }
 
-/* ===== Background: cinematic satellite texture ===== */
+/* ===== Cinematic background ===== */
 .bg{
   position:fixed;
   inset:0;
@@ -41,22 +40,28 @@ a:hover{ opacity:0.92; }
 
 .bg__satellite{
   position:absolute;
-  inset:-10%;
+  inset:-12%;
   background-image: var(--satellite-url);
   background-size: cover;
   background-position: center;
-  filter: blur(2px) saturate(1.05) contrast(1.05);
+  filter: blur(2px) saturate(1.05) contrast(1.06);
   opacity: 0.16;
-  transform: scale(1.03);
+  transform: scale(1.05);
   mix-blend-mode: screen;
+  animation: drift 26s ease-in-out infinite;
+}
+
+@keyframes drift{
+  0%,100% { transform: scale(1.06) translate3d(-0.6%, -0.4%, 0); }
+  50%     { transform: scale(1.06) translate3d(0.6%, 0.4%, 0); }
 }
 
 .bg__vignette{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(900px 520px at 20% 15%, rgba(214,178,110,0.16), transparent 60%),
-    radial-gradient(800px 520px at 85% 35%, rgba(214,178,110,0.10), transparent 62%),
+    radial-gradient(900px 520px at 18% 12%, rgba(214,178,110,0.18), transparent 60%),
+    radial-gradient(900px 520px at 84% 32%, rgba(214,178,110,0.10), transparent 62%),
     radial-gradient(1200px 900px at 50% 120%, rgba(255,255,255,0.05), transparent 65%),
     linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.92));
 }
@@ -106,7 +111,7 @@ a:hover{ opacity:0.92; }
 .brand__wordmark{
   height:22px;
   width:auto;
-  display:block;                 /* critical */
+  display:block;
   opacity:0.98;
   filter: drop-shadow(0 0 12px rgba(214,178,110,0.10));
 }
@@ -121,9 +126,28 @@ a:hover{ opacity:0.92; }
   font-size:13px;
   letter-spacing:0.02em;
   color:rgba(255,255,255,0.70);
+  position:relative;
 }
 
 .nav a:hover{ color:rgba(255,255,255,0.92); }
+
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-10px;
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(214,178,110,0.55), transparent);
+  opacity:0;
+  transform: translateY(2px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.nav a:hover::after{
+  opacity:0.75;
+  transform: translateY(0);
+}
 
 .nav__cta{
   padding:10px 14px;
@@ -151,7 +175,7 @@ a:hover{ opacity:0.92; }
   border-radius:2px;
 }
 
-/* ===== Hero (centered manifesto) ===== */
+/* ===== Hero ===== */
 .hero{
   padding: 132px 0 76px;
   text-align:center;
@@ -180,7 +204,7 @@ a:hover{ opacity:0.92; }
   letter-spacing:-0.03em;
   line-height:1.02;
   font-size: clamp(44px, 5.0vw, 78px);
-  max-width: 22ch;
+  max-width: 24ch;
 }
 
 .subline{
@@ -193,6 +217,14 @@ a:hover{ opacity:0.92; }
 
 .subline--muted{
   color: rgba(255,255,255,0.58);
+}
+
+.heroMeta{
+  margin: 18px 0 0;
+  color: rgba(255,255,255,0.70);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 70ch;
 }
 
 .hero__rule{
@@ -232,12 +264,39 @@ h2{
   letter-spacing:-0.02em;
 }
 
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
 p{
   margin:0;
   color: rgba(255,255,255,0.70);
   font-size: 18px;
   line-height: 1.75;
-  max-width: 72ch;
+  max-width: 76ch;
+}
+
+.fine{
+  color: rgba(255,255,255,0.58);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Chips */
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.chips span{
+  font-size:12.5px;
+  color: rgba(255,255,255,0.82);
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
 }
 
 /* Steps */
@@ -273,6 +332,55 @@ p{
   color: rgba(255,255,255,0.66);
   font-size: 14px;
   line-height: 1.65;
+}
+
+/* Capability line */
+.cap{
+  margin-top:16px;
+  border: 1px solid rgba(214,178,110,0.18);
+  background: rgba(214,178,110,0.06);
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+.cap__title{
+  color: rgba(255,255,255,0.70);
+  font-size: 12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.cap__text{
+  color: rgba(255,255,255,0.72);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Map panel */
+.mapPanel{
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.02);
+  overflow:hidden;
+  position:relative;
+}
+.mapPanel svg{
+  display:block;
+  width:100%;
+  height: 240px;
+}
+.mapPanel__label{
+  position:absolute;
+  left:16px;
+  bottom:14px;
+  font-size:12px;
+  letter-spacing:0.10em;
+  text-transform:uppercase;
+  color: rgba(255,255,255,0.60);
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(214,178,110,0.18);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
 }
 
 /* Contact */
@@ -355,7 +463,7 @@ p{
 .reveal, .revealSection{
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 1400ms cubic-bezier(.16,1,.3,1), transform 1400ms cubic-bezier(.16,1,.3,1);
+  transition: opacity 1500ms cubic-bezier(.16,1,.3,1), transform 1500ms cubic-bezier(.16,1,.3,1);
   will-change: opacity, transform;
 }
 
@@ -365,6 +473,7 @@ p{
 }
 
 @media (prefers-reduced-motion: reduce){
+  .bg__satellite{ animation:none; }
   .reveal, .revealSection{
     transition:none;
     opacity:1;
