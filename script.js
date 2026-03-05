@@ -20,8 +20,12 @@
     });
   }
 
-  // Slow reveal
+  // Slow reveal + subtle stagger
   const nodes = document.querySelectorAll(".reveal, .revealSection");
+  nodes.forEach((el, i) => {
+    el.style.transitionDelay = `${Math.min(i * 80, 320)}ms`;
+  });
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) e.target.classList.add("isVisible");
