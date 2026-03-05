@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QOLQA — International Trade & Brokerage</title>
+  <meta name="description" content="International trade & brokerage in commodities: Agri, Energy, Metals." />
+
+  <!-- Free font: Inter (Linear-like feel) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#0A1A2F;
+      --gold:#D6B26E;
+      --text: rgba(255,255,255,.88);
+      --muted: rgba(255,255,255,.62);
+      --line: rgba(214,178,110,.18);
+      --card: rgba(255,255,255,.035);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      letter-spacing:-0.01em;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:26px 22px 80px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0 18px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:0;
+    }
+    .mark{
+      width:34px; height:34px; border-radius:10px;
+      display:grid; place-items:center;
+      background: rgba(214,178,110,.10);
+      border:1px solid rgba(214,178,110,.25);
+    }
+    .mark svg{width:22px; height:22px; display:block}
+    .word{
+      font-weight:700;
+      letter-spacing:0.10em;
+      font-size:13px;
+      color:#fff;            /* keep wordmark WHITE */
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .nav{
+      display:flex; gap:16px; font-size:13px; color:var(--muted);
+    }
+    .nav a:hover{color:#fff}
+    .hero{padding:56px 0 28px;}
+    .kicker{
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      margin:0 0 14px;
+    }
+    h1{
+      margin:0;
+      font-size:52px;
+      line-height:1.02;
+      letter-spacing:-0.04em;
+      color:#fff;
+      max-width:920px;
+    }
+    .sub{
+      margin:18px 0 0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.55;
+      max-width:780px;
+    }
+    .cta{
+      margin-top:22px;
+      display:flex; gap:12px; flex-wrap:wrap;
+    }
+    .btn{
+      padding:10px 14px;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:600;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .btn.primary{
+      border-color: rgba(214,178,110,.40);
+      background: rgba(214,178,110,.14);
+      color:#fff;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .grid{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 4;
+      padding:18px;
+      border-radius:16px;
+      background: var(--card);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:14px;
+      color:#fff;
+      letter-spacing:-0.01em;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .section{
+      margin-top:34px;
+      padding-top:26px;
+      border-top:1px solid var(--line);
+      display:grid;
+      grid-template-columns: 4fr 8fr;
+      gap:18px;
+    }
+    .section h2{
+      margin:0;
+      font-size:14px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .section .body{
+      color: var(--text);
+      font-size:15px;
+      line-height:1.75;
+    }
+    .bullets{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color:#fff;
+      border:1px solid rgba(214,178,110,.28);
+      background: rgba(214,178,110,.10);
+    }
+    .contact{
+      display:flex; flex-wrap:wrap; gap:12px;
+      margin-top:12px;
+    }
+    .contact a{
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      font-size:13px;
+      color:#fff;
+    }
+    footer{
+      margin-top:40px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    @media (max-width: 900px){
+      h1{font-size:40px}
+      .card{grid-column: span 12}
+      .section{grid-template-columns: 1fr}
+      .nav{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">
+          <!-- Replace this SVG with your final Inca symbol SVG -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 L20 12 L12 21 L4 12 Z" stroke="var(--gold)" stroke-width="1.1"/>
+            <path d="M12 7 L16 12 L12 17 L8 12 Z" stroke="var(--gold)" stroke-width="1.1" opacity="0.95"/>
+          </svg>
+        </div>
+        <div class="word">QOLQA</div>
+      </div>
+
+      <div class="nav">
+        <a href="#what">What</a>
+        <a href="#markets">Markets</a>
+        <a href="#about">About</a>
+        <a href="#contact" style="color:#fff;">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <p class="kicker">International trade & brokerage</p>
+      <h1>Fast, clear execution across physical commodity markets.</h1>
+      <p class="sub">
+        Qolqa operates in international trade and brokerage across
+        agricultural commodities, energy products and metals.
+      </p>
+
+      <div class="cta">
+        <a class="btn primary" href="#contact">Contact</a>
+        <a class="btn" href="#markets">Focus markets</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Agricultural commodities</h3>
+          <p>Origination, brokering and trade support across key agri flows.</p>
+        </div>
+        <div class="card">
+          <h3>Energy</h3>
+          <p>Market access, deal structuring and execution support.</p>
+        </div>
+        <div class="card">
+          <h3>Metals</h3>
+          <p>Industrial metals brokerage with disciplined counterparty focus.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="what" class="section">
+      <h2>What</h2>
+      <div class="body">
+        We keep it simple: match counterparties, confirm specs and terms, and drive transactions to close.
+      </div>
+    </section>
+
+    <section id="markets" class="section">
+      <h2>Markets</h2>
+      <div class="body">
+        <div>Primary focus:</div>
+        <ul class="bullets">
+          <li class="pill">Agri</li>
+          <li class="pill">Energy</li>
+          <li class="pill">Metals</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="body">
+        Independent platform focused on international commodity trade and brokerage.
+        Built for speed, clarity and reliability.
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="body">
+        Commercial inquiries:
+        <div class="contact">
+          <a href="mailto:contact@qolqagroup.com">contact@qolqagroup.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Qolqa</div>
+      <div style="color:rgba(214,178,110,.75);">Navy #0A1A2F • Gold #D6B26E</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
