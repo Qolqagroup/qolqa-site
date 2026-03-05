@@ -2,293 +2,317 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>QOLQA — International Trade & Brokerage</title>
-  <meta name="description" content="International trade & brokerage in commodities: Agri, Energy, Metals." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Origination & market expansion for Africa and MENA. We secure new revenue for exporters and principals by structuring bankable deals and managing execution risk on the ground." />
+  <title>Qolqa — Origination & Market Expansion</title>
 
-  <!-- Free font: Inter (Linear-like feel) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Inter is widely associated with the “Linear-style” modern UI typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --navy:#0A1A2F;
-      --gold:#D6B26E;
-      --text: rgba(255,255,255,.88);
-      --muted: rgba(255,255,255,.62);
-      --line: rgba(214,178,110,.18);
-      --card: rgba(255,255,255,.035);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--navy);
-      color: var(--text);
-      letter-spacing:-0.01em;
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:1100px; margin:0 auto; padding:26px 22px 80px;}
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0 18px;
-      border-bottom:1px solid var(--line);
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width:0;
-    }
-    .mark{
-      width:34px; height:34px; border-radius:10px;
-      display:grid; place-items:center;
-      background: rgba(214,178,110,.10);
-      border:1px solid rgba(214,178,110,.25);
-    }
-    .mark svg{width:22px; height:22px; display:block}
-    .word{
-      font-weight:700;
-      letter-spacing:0.10em;
-      font-size:13px;
-      color:#fff;            /* keep wordmark WHITE */
-      text-transform:uppercase;
-      white-space:nowrap;
-    }
-    .nav{
-      display:flex; gap:16px; font-size:13px; color:var(--muted);
-    }
-    .nav a:hover{color:#fff}
-    .hero{padding:56px 0 28px;}
-    .kicker{
-      color:var(--muted);
-      font-size:13px;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      margin:0 0 14px;
-    }
-    h1{
-      margin:0;
-      font-size:52px;
-      line-height:1.02;
-      letter-spacing:-0.04em;
-      color:#fff;
-      max-width:920px;
-    }
-    .sub{
-      margin:18px 0 0;
-      color:var(--muted);
-      font-size:18px;
-      line-height:1.55;
-      max-width:780px;
-    }
-    .cta{
-      margin-top:22px;
-      display:flex; gap:12px; flex-wrap:wrap;
-    }
-    .btn{
-      padding:10px 14px;
-      border-radius:12px;
-      font-size:13px;
-      font-weight:600;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-    .btn.primary{
-      border-color: rgba(214,178,110,.40);
-      background: rgba(214,178,110,.14);
-      color:#fff;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .grid{
-      margin-top:26px;
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-    }
-    .card{
-      grid-column: span 4;
-      padding:18px;
-      border-radius:16px;
-      background: var(--card);
-      border:1px solid rgba(255,255,255,.08);
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size:14px;
-      color:#fff;
-      letter-spacing:-0.01em;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.5;
-    }
-    .section{
-      margin-top:34px;
-      padding-top:26px;
-      border-top:1px solid var(--line);
-      display:grid;
-      grid-template-columns: 4fr 8fr;
-      gap:18px;
-    }
-    .section h2{
-      margin:0;
-      font-size:14px;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-    .section .body{
-      color: var(--text);
-      font-size:15px;
-      line-height:1.75;
-    }
-    .bullets{
-      margin:12px 0 0;
-      padding:0;
-      list-style:none;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .pill{
-      padding:8px 10px;
-      border-radius:999px;
-      font-size:12px;
-      color:#fff;
-      border:1px solid rgba(214,178,110,.28);
-      background: rgba(214,178,110,.10);
-    }
-    .contact{
-      display:flex; flex-wrap:wrap; gap:12px;
-      margin-top:12px;
-    }
-    .contact a{
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      font-size:13px;
-      color:#fff;
-    }
-    footer{
-      margin-top:40px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:12px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    @media (max-width: 900px){
-      h1{font-size:40px}
-      .card{grid-column: span 12}
-      .section{grid-template-columns: 1fr}
-      .nav{display:none}
-    }
-  </style>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="brand">
-        <div class="mark" aria-hidden="true">
-          <!-- Replace this SVG with your final Inca symbol SVG -->
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 3 L20 12 L12 21 L4 12 Z" stroke="var(--gold)" stroke-width="1.1"/>
-            <path d="M12 7 L16 12 L12 17 L8 12 Z" stroke="var(--gold)" stroke-width="1.1" opacity="0.95"/>
-          </svg>
-        </div>
-        <div class="word">QOLQA</div>
-      </div>
+  <a class="skip" href="#main">Skip to content</a>
 
-      <div class="nav">
-        <a href="#what">What</a>
-        <a href="#markets">Markets</a>
-        <a href="#about">About</a>
-        <a href="#contact" style="color:#fff;">Contact</a>
-      </div>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Qolqa home">
+        <!-- Replace with your real logo SVG later. White logo recommended on dark backgrounds. -->
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Qolqa</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#models">Engagement</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <section class="hero">
-      <p class="kicker">International trade & brokerage</p>
-      <h1>Fast, clear execution across physical commodity markets.</h1>
-      <p class="sub">
-        Qolqa operates in international trade and brokerage across
-        agricultural commodities, energy products and metals.
-      </p>
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Africa · Middle East</p>
+          <h1>Origination & market expansion for exporters and principals.</h1>
+          <p class="subhead">
+            We secure new revenue by sourcing real counterparties, structuring bankable deals,
+            and managing execution risk on the ground.
+          </p>
 
-      <div class="cta">
-        <a class="btn primary" href="#contact">Contact</a>
-        <a class="btn" href="#markets">Focus markets</a>
-      </div>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Request an introduction</a>
+            <a class="btn ghost" href="#approach">See how we work</a>
+          </div>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Agricultural commodities</h3>
-          <p>Origination, brokering and trade support across key agri flows.</p>
+          <div class="pill-row" aria-label="Sectors">
+            <span class="pill">Agri commodities</span>
+            <span class="pill">Processed foods</span>
+            <span class="pill">Manufactured goods</span>
+            <span class="pill">Energy</span>
+            <span class="pill">Metals</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>Energy</h3>
-          <p>Market access, deal structuring and execution support.</p>
-        </div>
-        <div class="card">
-          <h3>Metals</h3>
-          <p>Industrial metals brokerage with disciplined counterparty focus.</p>
+
+        <div class="hero-panel" aria-hidden="true">
+          <div class="panel-glow"></div>
+          <div class="panel-card">
+            <div class="panel-title">Execution-first brokerage</div>
+            <div class="panel-line"></div>
+            <div class="panel-points">
+              <div class="panel-point">
+                <div class="dot"></div>
+                <div>
+                  <div class="k">Counterparty validation</div>
+                  <div class="v">Credibility, capacity, intent</div>
+                </div>
+              </div>
+              <div class="panel-point">
+                <div class="dot"></div>
+                <div>
+                  <div class="k">Terms that match reality</div>
+                  <div class="v">Specs, logistics, payments, remedies</div>
+                </div>
+              </div>
+              <div class="panel-point">
+                <div class="dot"></div>
+                <div>
+                  <div class="k">Repeatable flows</div>
+                  <div class="v">Not “one-off” chaos</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-micro">
+              <span>Confidential</span>
+              <span class="sep">•</span>
+              <span>Selective mandates</span>
+              <span class="sep">•</span>
+              <span>Outcome-aligned fees</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="what" class="section">
-      <h2>What</h2>
-      <div class="body">
-        We keep it simple: match counterparties, confirm specs and terms, and drive transactions to close.
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>What we do</h2>
+          <p>We originate. We sell. We de-risk. Then we stay until performance and payment.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Demand creation</h3>
+            <p>Identify buyers, qualify needs, open doors, drive negotiation and close.</p>
+            <ul>
+              <li>Buyer discovery & qualification</li>
+              <li>Decision-maker access</li>
+              <li>Commercial negotiation support</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Origination</h3>
+            <p>Source supply and validate the only thing that matters: performance.</p>
+            <ul>
+              <li>Supplier discovery & capacity checks</li>
+              <li>Specs, compliance, and documentation</li>
+              <li>Pricing & terms alignment</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Intermediation</h3>
+            <p>Broker spot and flow deals with disciplined risk controls and execution support.</p>
+            <ul>
+              <li>Structured offers and counteroffers</li>
+              <li>Logistics feasibility baked into terms</li>
+              <li>Follow-through through shipment/delivery</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="markets" class="section">
-      <h2>Markets</h2>
-      <div class="body">
-        <div>Primary focus:</div>
-        <ul class="bullets">
-          <li class="pill">Agri</li>
-          <li class="pill">Energy</li>
-          <li class="pill">Metals</li>
-        </ul>
+    <section class="section muted">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2>Where we operate</h2>
+            <p>
+              Africa and the Middle East—ground truth, not desk research.
+              Ports, corridors, payment behavior, buyer credibility, and what happens after signature.
+            </p>
+          </div>
+          <div class="quote">
+            <p class="quote-text">
+              “Deals fail in the gap between paper and reality. We close that gap.”
+            </p>
+            <p class="quote-meta">Execution mindset · Local fluency · Reputation protection</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <div class="body">
-        Independent platform focused on international commodity trade and brokerage.
-        Built for speed, clarity and reliability.
+    <section id="approach" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>How we work</h2>
+          <p>A simple process. No theatre. No “pipeline” vanity metrics.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-n">01</div>
+            <div class="step-b">
+              <div class="step-t">Diagnose</div>
+              <div class="step-d">Product fit, target markets, constraints, red lines, proof of performance.</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-n">02</div>
+            <div class="step-b">
+              <div class="step-t">Originate</div>
+              <div class="step-d">Shortlist real counterparties. Qualify, validate, and filter hard.</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-n">03</div>
+            <div class="step-b">
+              <div class="step-t">Structure</div>
+              <div class="step-d">Terms, documentation, controls, and an execution plan that survives reality.</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-n">04</div>
+            <div class="step-b">
+              <div class="step-t">Execute</div>
+              <div class="step-d">We stay in the loop until delivery/performance and payment close the loop.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-k">Security-first</div>
+            <div class="principle-v">Reduce surprises, reduce exposure, protect reputations.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-k">Selective</div>
+            <div class="principle-v">We take mandates we can defend and deliver.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-k">Outcome-aligned</div>
+            <div class="principle-v">We win when your deal closes and repeats.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="models" class="section muted">
+      <div class="container">
+        <div class="section-head">
+          <h2>Engagement models</h2>
+          <p>Transparent incentives. No hidden games.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Success fees</h3>
+            <p>Spot deals and repeat flows. Paid on outcomes, not promises.</p>
+            <ul>
+              <li>Brokerage on executed trades</li>
+              <li>Flow arrangements</li>
+              <li>Introductions with defined success triggers</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Retainer + success</h3>
+            <p>For sustained market build. Retainer covers the work. Success covers the win.</p>
+            <ul>
+              <li>Market development</li>
+              <li>Buyer coverage & origination</li>
+              <li>Pipeline + execution support</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Strategic mandates</h3>
+            <p>Larger supply chains and investments where execution discipline is the edge.</p>
+            <ul>
+              <li>JVs and offtake structuring</li>
+              <li>Multi-country sourcing programs</li>
+              <li>Risk and operations advisory</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="body">
-        Commercial inquiries:
-        <div class="contact">
-          <a href="mailto:contact@qolqagroup.com">contact@qolqagroup.com</a>
+      <div class="container contact">
+        <div class="contact-left">
+          <h2>Let’s talk if you want deals that close—and repeat.</h2>
+          <p>
+            If you can perform and you value execution discipline, we’ll move fast.
+            If you want “spray and pray,” don’t waste your time.
+          </p>
+        </div>
+
+        <div class="contact-right">
+          <div class="contact-card">
+            <div class="contact-row">
+              <div class="label">Email</div>
+              <a class="value" href="mailto:contact@qolqa.com">contact@qolqa.com</a>
+            </div>
+            <div class="contact-row">
+              <div class="label">WhatsApp</div>
+              <a class="value" href="#" onclick="return false;">+XX XX XX XX XX</a>
+            </div>
+            <div class="contact-row">
+              <div class="label">Calendly</div>
+              <a class="value" href="#" onclick="return false;">Book a 15-minute call</a>
+            </div>
+
+            <div class="contact-actions">
+              <a class="btn primary full" href="mailto:contact@qolqa.com?subject=Qolqa%20—%20Introduction%20request">Request an introduction</a>
+              <p class="fineprint">Replace placeholders with your real contact links.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div>© <span id="y"></span> Qolqa</div>
-      <div style="color:rgba(214,178,110,.75);">Navy #0A1A2F • Gold #D6B26E</div>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="foot-left">
+          <div class="foot-brand">Qolqa</div>
+          <div class="foot-note">Origination & market expansion across Africa and the Middle East.</div>
+        </div>
+        <div class="foot-right">
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#models">Engagement</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
     </footer>
-  </div>
+  </main>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>
