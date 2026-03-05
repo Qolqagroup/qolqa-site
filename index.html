@@ -1,216 +1,143 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Developing sustainable value in emerging markets" />
+  <title>QOLQA</title>
 
-<title>QOLQA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<meta name="description" content="Developing sustainable value in emerging markets">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="./styles.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
-
 <body>
-
-<div class="ambient">
-<div class="ambient-halo"></div>
-<div class="ambient-noise"></div>
-</div>
-
-
-
-<header class="header">
-
-<div class="container header-inner">
-
-<a class="brand" href="#top">
-
-<img src="./assets/qolqa-symbol.jpg" class="brand-symbol">
-<img src="./assets/qolqa-wordmark.png" class="brand-wordmark">
-
-</a>
-
-
-<nav class="nav">
-
-<a href="#purpose">Purpose</a>
-<a href="#approach">Approach</a>
-<a href="#regions">Regions</a>
-<a href="#contact" class="nav-cta">Contact</a>
-
-</nav>
-
-<button class="nav-toggle">
-<span></span>
-<span></span>
-</button>
-
-</div>
-
-</header>
-
-
-
-<main id="top">
-
-<section class="hero">
-
-<div class="container hero-center">
-
-<p class="eyebrow">
-Africa · Middle East
-</p>
-
-
-<h1 class="headline">
-Developing sustainable value in emerging markets
-</h1>
-
-
-<p class="subline">
-Private access. Clear execution.
-</p>
-
-<p class="subline muted">
-Selective mandates only
-</p>
-
-</div>
-
-<div class="hero-line"></div>
-
-</section>
-
-
-
-<section id="purpose" class="section">
-
-<div class="container grid">
-
-<h2>Purpose</h2>
-
-<p>
-We develop new commercial opportunities for organisations expanding into high-growth regions.
-</p>
-
-</div>
-
-</section>
-
-
-
-<section id="approach" class="section section-soft">
-
-<div class="container grid">
-
-<h2>Approach</h2>
-
-<div class="steps">
-
-<div class="step">
-<div class="n">01</div>
-<div class="t">Define</div>
-<div class="d">Target markets, terms, boundaries.</div>
-</div>
-
-<div class="step">
-<div class="n">02</div>
-<div class="t">Connect</div>
-<div class="d">Qualified counterparties, aligned incentives.</div>
-</div>
-
-<div class="step">
-<div class="n">03</div>
-<div class="t">Support</div>
-<div class="d">Until closure — for repeatability.</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section id="regions" class="section">
-
-<div class="container grid">
-
-<h2>Regions</h2>
-
-<p>
-Africa and the Middle East<br>
-with deep understanding of local culture, logistics and counterpart realisties.
-</p>
-
-</div>
-
-</section>
-
-
-
-<section id="contact" class="section section-final">
-
-<div class="container contact">
-
-<div>
-
-<h2>Contact</h2>
-
-<p>Start a conversation.</p>
-
-</div>
-
-
-<a class="contact-card" href="mailto:hello@qolqagroup.com?subject=QOLQA">
-
-<div class="contact-top">
-<div class="label">Email</div>
-<div class="value">hello@qolqagroup.com</div>
-</div>
-
-<div class="contact-bottom">
-<span>Send message</span>
-<span>→</span>
-</div>
-
-</a>
-
-</div>
-
-</section>
-
-
-
-<footer class="footer">
-
-<div class="container footer-inner">
-
-<div class="footer-left">
-QOLQA © <span id="year"></span>
-</div>
-
-<a href="#top">Top</a>
-
-</div>
-
-</footer>
-
-
-</main>
-
-<script src="./scripts.js"></script>
-
+  <!-- Full-screen cinematic background -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__satellite"></div>
+    <div class="bg__vignette"></div>
+    <div class="bg__grain"></div>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="QOLQA home">
+        <img class="brand__symbol" src="./assets/qolqa-symbol.jpg" alt="QOLQA symbol" />
+        <img class="brand__wordmark" src="./assets/qolqa-wordmark.png" alt="QOLQA" />
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#purpose">Purpose</a>
+        <a href="#approach">Approach</a>
+        <a href="#regions">Regions</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </nav>
+
+      <button class="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__center">
+        <p class="eyebrow reveal">Africa · Middle East</p>
+
+        <h1 class="headline reveal">
+          Developing sustainable value in emerging markets
+        </h1>
+
+        <p class="subline reveal">Private access. Clear execution.</p>
+        <p class="subline subline--muted reveal">Selective mandates only</p>
+      </div>
+
+      <div class="hero__rule" aria-hidden="true"></div>
+    </section>
+
+    <!-- PURPOSE -->
+    <section id="purpose" class="section">
+      <div class="container grid revealSection">
+        <h2>Purpose</h2>
+        <p>
+          We develop new commercial opportunities for organisations expanding into high-growth regions.
+        </p>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="approach" class="section section--soft">
+      <div class="container grid revealSection">
+        <h2>Approach</h2>
+
+        <div class="steps">
+          <div class="step">
+            <div class="n">01</div>
+            <div class="t">Define</div>
+            <div class="d">Target markets, terms, boundaries.</div>
+          </div>
+
+          <div class="step">
+            <div class="n">02</div>
+            <div class="t">Connect</div>
+            <div class="d">Qualified counterparties, aligned incentives.</div>
+          </div>
+
+          <div class="step">
+            <div class="n">03</div>
+            <div class="t">Support</div>
+            <div class="d">Until closure — for repeatability.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGIONS -->
+    <section id="regions" class="section">
+      <div class="container grid revealSection">
+        <h2>Regions</h2>
+        <p>
+          Africa and the Middle East<br />
+          with deep understanding of local culture, logistics and counterpart realisties.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--final">
+      <div class="container contact revealSection">
+        <div>
+          <h2>Contact</h2>
+          <p>Start a conversation.</p>
+        </div>
+
+        <a class="contactCard" href="mailto:hello@qolqagroup.com?subject=QOLQA%20—%20Conversation">
+          <div class="contactCard__top">
+            <div class="label">Email</div>
+            <div class="value">hello@qolqagroup.com</div>
+          </div>
+          <div class="contactCard__bottom">
+            <span>Send message</span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <span class="footer__mark">QOLQA</span>
+          <span class="footer__muted">© <span id="year"></span></span>
+        </div>
+        <a class="footer__link" href="#top">Top</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="./scripts.js"></script>
 </body>
-
 </html>
